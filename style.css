@@ -1,0 +1,226 @@
+/* STYLE SECTIONING TAGS */
+* {
+    margin:0px;
+    padding:0px;
+  }
+  
+  html {
+    background-color: #00296b;
+  }
+  
+  main {
+    background-color:#e2eafc;
+    color:#10002b;
+    font-family: "Gaegu", sans-serif;
+    text-align:center;
+    max-width: 90%;
+    min-height:600px;
+    margin-left:auto;
+    margin-right:auto;
+    
+  }
+  header {
+    background-color:#e2eafc;
+    font-size:28px;
+    color:#10002b;
+    font-family: "Gaegu", static;
+    height:120px;
+    line-height:120px;
+    text-align:center;
+    overflow:hidden;
+  }
+  
+  h2{
+    font-size:45px;
+    padding-top:10px;
+  }
+  
+  .projects{
+    font-size:35px;
+    font-family: "Gaegu", static;
+  }
+  
+  .posts {
+    background-color:#03045e;
+    color:#ada7ff;
+    padding:15px;
+  }
+  
+  /* STYLE TEXT */
+  a {
+    color:#edf2fb;
+  }
+  
+  .links {
+    color:#0077b6;
+  }
+  
+  p{
+    font-size:22px;
+    font-family:"Gaegu", static;
+    margin-top:0;
+    margin-bottom:0;
+    margin-left:20%;
+    margin-right:20%;
+    padding-bottom:10px;
+    padding-top:10px;
+  }
+  
+  #intro{
+    font-size:30px;
+    font-family: "Gaegu", static;
+    margin-top:0;
+    margin-bottom:15px;
+    margin-left:18%;
+    margin-right:18%;
+  }
+  
+  .date {
+    font-size:20px;
+  }
+  
+  /* STYLE IMAGES */
+  img{
+    border-radius:10%;
+    border: 5px solid #03045e;
+    margin-bottom:10px;
+    margin-top:10px;
+  }
+  
+  .creations {
+    border:0px;
+    border-radius:5%;
+  }
+  
+  .image-layout {
+    display:flex;
+    justify-content:space-between;
+  
+      #star-gif {
+        margin-top:50px;
+        margin-left:50px;
+        border:none;
+      }
+      #star-copy-gif {
+        margin-top:50px;
+        margin-right:50px;
+        border:none;
+      }
+      #beach {
+         margin-left:30px;
+      }
+      .posts-bar {
+        flex:1;
+        margin:10px;
+        margin-bottom:200px;
+      }
+      #forest {
+        margin-right:30px;
+      }
+      #kitty {
+        margin-left:40px;
+      }
+      #cloud {
+        margin-right:40px;
+      }
+  }
+  
+  /* STYLE NAV BAR */
+  nav {
+    font-size:20px;
+    font-family: "Baskerville", serif;
+    text-align:center;
+  }
+  
+  ul,ol{
+    list-style:none;
+    background-color:#014f86;
+    overflow: hidden;
+    padding:1em;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    padding:1em;
+  }
+  
+  li a:hover {
+    background-color: #bbd0ff;
+  }
+  
+  body{
+    cursor: url('assets/rusty_optimized.png'), auto;
+  }
+
+  .image-layout {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 100vh;          /* Make the container full height (optional) */
+}
+
+.countdown{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* FAQ Section*/
+
+.faq-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 0;
+  color: #555;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-question::after {
+  content: " -";
+}
+
+.faq-question::after {
+  content: " +";
+  float: right;
+}
