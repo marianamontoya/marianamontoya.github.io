@@ -1,4 +1,3 @@
-/* STYLE SECTIONING TAGS */
 * {
     margin:0px;
     padding:0px;
@@ -65,16 +64,6 @@
     padding-bottom:10px;
     padding-top:10px;
   }
-  
-  #intro{
-    font-size:30px;
-    font-family: "Gaegu", static;
-    margin-top:0;
-    margin-bottom:15px;
-    margin-left:18%;
-    margin-right:18%;
-  }
-  
   .date {
     font-size:20px;
   }
@@ -83,48 +72,82 @@
   img{
     border-radius:10%;
     border: 5px solid #03045e;
-    margin-bottom:10px;
-    margin-top:10px;
+    margin-bottom:5px;
+    margin-top:5px;
   }
   
   .creations {
     border:0px;
     border-radius:5%;
   }
-  
   .image-layout {
-    display:flex;
     justify-content:space-between;
-  
-      #star-gif {
-        margin-top:50px;
-        margin-left:50px;
-        border:none;
-      }
-      #star-copy-gif {
-        margin-top:50px;
-        margin-right:50px;
-        border:none;
-      }
-      #beach {
-         margin-left:30px;
-      }
-      .posts-bar {
-        flex:1;
-        margin:10px;
-        margin-bottom:200px;
-      }
-      #forest {
-        margin-right:30px;
-      }
-      #kitty {
-        margin-left:40px;
-      }
-      #cloud {
-        margin-right:40px;
-      }
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ensure the caption stays within the image bounds */
+  }
+  body{
+    cursor: url('assets/rusty_optimized.png'), auto;
+  }
+
+
+  #me {
+    margin: 0; /* Remove any margin around the image */
+    padding: 0; /* Remove any padding around the image */
   }
   
+  .image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Start at the center, but hidden */
+    background: rgba(255, 255, 0, 0.8); /* Bright yellow with some transparency */
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    text-align: center;
+    transition: transform 0.5s ease, background 0.3s ease; /* Smooth animation */
+  }
+
+  .image-layout:hover .image-caption.show-caption {
+    transform: translate(-50%, -50%) scale(1); /* Scale up to become visible */
+    background: rgba(255, 165, 0, 0.9); /* Change to a funky orange background */
+  }
+
+  .image-caption.show-caption {
+    animation: wobble 0.5s ease-in-out;
+  }
+
+  @keyframes wobble {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) rotate(-5deg); }
+    50% { transform: translate(-50%, -50%) rotate(5deg); }
+    75% { transform: translate(-50%, -50%) rotate(-5deg); }
+  }
+
+  .countdown h2, .countdown p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+  }
+  
+  .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
   /* STYLE NAV BAR */
   nav {
     font-size:20px;
@@ -153,41 +176,24 @@
   li a:hover {
     background-color: #bbd0ff;
   }
-  
-  body{
-    cursor: url('assets/rusty_optimized.png'), auto;
-  }
 
-  .image-layout {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    height: 100vh;          /* Make the container full height (optional) */
-}
-
+/* COUNTDOWN */
 .countdown{
     font-size: 2em;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 5px;
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-}
+#intro{
+  font-size:30px;
+  font-family: "Gaegu", static;
+  margin-top:0;
+  margin-bottom:15px;
+  margin-left:18%;
+  margin-right:18%;
+  margin-bottom: 5px; /* Reduce the space between the intro text and the next element */
 
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
-
 
 /* FAQ Section*/
 
@@ -223,4 +229,40 @@
 .faq-question::after {
   content: " +";
   float: right;
+}
+
+/* STYLE FOR FOOTER */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #014f86; /* Background color */
+  text-align: center;
+  padding: 5px 0; /* Reduced padding for a smaller footer */
+  border-top: 2px solid #fff; /* Border at the top of the footer */
+  z-index: 1000; /* Ensure it stays above other content */
+  display: none; /* Initially hidden */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px; /* Reduced margin between icons */
+}
+
+.social-icon img {
+  width: 20px; /* Smaller size for the icons */
+  height: 20px; /* Ensure height matches width for square icons */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+  border: none;
+}
+
+.social-icon img:hover {
+  opacity: 0.7; /* Slightly fade the icon on hover */
 }

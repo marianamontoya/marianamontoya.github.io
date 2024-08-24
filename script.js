@@ -41,3 +41,42 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+document.querySelectorAll('.image-layout').forEach(function(container) {
+    // Create a caption div
+    const caption = document.createElement('div');
+    caption.classList.add('image-caption');
+    caption.innerText = container.getAttribute('data-caption');
+    container.appendChild(caption);
+    
+    // Show caption on hover
+    container.addEventListener('mouseenter', function() {
+      caption.classList.add('show-caption');
+    });
+    
+    // Hide caption when not hovering
+    container.addEventListener('mouseleave', function() {
+      caption.classList.remove('show-caption');
+    });
+  });
+// Footer Scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.getElementById('bottom-footer');
+  
+    function checkScroll() {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight;
+  
+      if (scrollPosition >= documentHeight - 1) { // Check if almost at the bottom
+        footer.style.display = 'block';
+      } else {
+        footer.style.display = 'none';
+      }
+    }
+  
+    // Check scroll position on page load and scroll events
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check in case the user is already at the bottom
+  });
+  
+  
