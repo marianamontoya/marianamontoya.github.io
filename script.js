@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Image Captions
 document.querySelectorAll('.image-layout').forEach(function(container) {
     // Create a caption div
     const caption = document.createElement('div');
@@ -59,6 +60,8 @@ document.querySelectorAll('.image-layout').forEach(function(container) {
       caption.classList.remove('show-caption');
     });
   });
+
+
 // Footer Scroll
 document.addEventListener('DOMContentLoaded', function() {
     const footer = document.getElementById('bottom-footer');
