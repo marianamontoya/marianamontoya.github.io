@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Image Captions
 document.querySelectorAll('.image-layout').forEach(function(container) {
-    // Create a caption div
+    
+  // Create a caption div
     const caption = document.createElement('div');
     caption.classList.add('image-caption');
     caption.innerText = container.getAttribute('data-caption');
