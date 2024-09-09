@@ -53,7 +53,6 @@
 
   h1{
     font-size:60px;
-    padding: none;
   }
   
   .projects{
@@ -117,7 +116,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0); /* Start at the center, but hidden */
-    background: rgba(255, 255, 0, 0.8); /* Bright yellow with some transparency */
     color: black;
     padding: 10px;
     border-radius: 10px;
@@ -252,7 +250,8 @@
 
 .faq-item {
   border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 10px;
+  background-color: #edf2fb;
 }
 
 .faq-question {
@@ -318,6 +317,72 @@ footer {
   font-family: "Gaegu", static;
 }
 
-/* .social-icon img:hover {
-  opacity: 0.7;
-} */
+
+/*SLIDER*/
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+  height: 100vh;
+}
+
+.slider-container {
+  width: 100%;
+  height: 100vh; /* Allow slider to take up 60% of the viewport */
+  overflow: hidden;
+  position: relative;
+  margin-top: 80px; /* Adjust this value based on your navbar height */
+
+}
+
+.slider {
+  display: flex;
+  height: 120%;
+  width: 300%; /* Since we have 3 slides */
+  transition: transform 0.3s ease;
+}
+
+.slide {
+  width: 100%;
+  height: 120%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  position: relative;
+}
+
+#slide-1 {
+  background-image: url('/assets/background2.jpeg');
+}
+
+#slide-2 {
+  background-image: url('/assets/background2.jpeg');
+}
+
+#slide-3 {
+  background-image: url('/assets/background2.jpeg');
+}
+
+/* Scrollable content below the slider */
+.content {
+  padding: 20px;
+}
+
+/* Add a peek effect for slides */
+.slider-container .slide {
+  width: 90vw;
+  margin-right: 5vw; 
+}
+
+/*Portfolio Page*/
+body.portfolio {
+  background-image: url('/assets/toki.jpg');
+}
+
+h1.portfolio{
+  color: whitesmoke;
+  text-align: left;
+}
