@@ -147,4 +147,3 @@ document.addEventListener('DOMContentLoaded', function() {
       prevTranslate = currentTranslate;
       setSliderPosition(currentTranslate);
   }
-  

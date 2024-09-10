@@ -107,8 +107,8 @@
   }
 
   #me {
-    margin: 0; /* Remove any margin around the image */
-    padding: 0; /* Remove any padding around the image */
+    margin: 0; 
+    padding: 0; 
   }
   
   .image-caption {
@@ -125,10 +125,9 @@
   }
 
   .image-layout:hover .image-caption.show-caption {
-    /* transform: translate(-50%, -50%) scale(1); Scale up to become visible */
     transform: translate(-50%, -50%) scale(1);
     background: rgba(255, 165, 0, 0.9);
-    opacity: 1; /* Make it visible on hover */
+    opacity: 1; 
     visibility: visible;
   }
 
@@ -147,7 +146,7 @@
     margin: 0;
     padding: 0;
   }
-  
+
   .video-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -156,7 +155,7 @@
       max-width: 100%;
       background: #000;
   }
-  
+
   .video-container video {
       position: absolute;
       top: 0;
@@ -191,7 +190,7 @@
     color: white;
     font-size: 1.3em;
   }
-  
+
   .topnav a.active {
     color: white;
   }
@@ -207,182 +206,194 @@
     overflow: hidden;
     padding:1em;
   }
-  
+
   li {
     display: inline;
   }
-  
+
   li a {
     text-decoration: none;
     color: white;
     font-size: 1.3em;
     padding:1em;
   }
-  
+
   li a:hover {
     background-color: #bbd0ff;
   }
 
-/* COUNTDOWN */
-.countdown{
-    font-size: 2em;
+  /* COUNTDOWN */
+  .countdown{
+      font-size: 2em;
+      text-align: center;
+      margin-top: 5px;
+  }
+
+  #intro{
+    font-size:30px;
+    font-family: "Gaegu", static;
+    margin-top:0;
+    margin-bottom:15px;
+    margin-left:18%;
+    margin-right:18%;
+    margin-bottom: 5px; /* Reduce the space between the intro text and the next element */
+
+  }
+
+  /* FAQ Section*/
+
+  .faq-section {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    background-color: #edf2fb;
+  }
+
+  .faq-question {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 10px 0;
+    color: #555;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .faq-item.active .faq-question::after {
+    content: " -";
+  }
+
+  .faq-question::after {
+    content: " +";
+    float: right;
+  }
+
+  /* STYLE FOR FOOTER */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    margin-top: 5px;
-}
+    padding: 5px 0;
+    z-index: 1000;
+    display: none; 
+  }
 
-#intro{
-  font-size:30px;
-  font-family: "Gaegu", static;
-  margin-top:0;
-  margin-bottom:15px;
-  margin-left:18%;
-  margin-right:18%;
-  margin-bottom: 5px; /* Reduce the space between the intro text and the next element */
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-}
+  .social-icon {
+    display: inline-block;
+    margin: 0 10px; 
+  }
 
-/* FAQ Section*/
+  .social-icon img {
+    width: 40px; 
+    height: 40px;
+    transition: opacity 0.3s ease; 
+    border: none;
+  }
 
-.faq-section {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  background-color: #edf2fb;
-}
-
-.faq-question {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.faq-answer {
-  display: none;
-  padding: 10px 0;
-  color: #555;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-.faq-item.active .faq-question::after {
-  content: " -";
-}
-
-.faq-question::after {
-  content: " +";
-  float: right;
-}
-
-/* STYLE FOR FOOTER */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding: 5px 0; /* Reduced padding for a smaller footer */
-  z-index: 1000; /* Ensure it stays above other content */
-  display: none; /* Initially hidden */
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.social-icon {
-  display: inline-block;
-  margin: 0 10px; 
-}
-
-.social-icon img {
-  width: 40px; 
-  height: 40px;
-  transition: opacity 0.3s ease; 
-  border: none;
-}
-
-.small-text {
-  position: absolute;
-  bottom: 0; /* Place at the bottom */
-  right: 10px; /* Place to the right */
-  font-size: 20px; /* Small text size */
-  color: white;
-  font-family: "Gaegu", static;
-}
+  .small-text {
+    position: absolute;
+    bottom: 0; /* Place at the bottom */
+    right: 10px; /* Place to the right */
+    font-size: 20px; /* Small text size */
+    color: white;
+    font-family: "Gaegu", static;
+  }
 
 
-/*SLIDER*/
+  /*SLIDER*/
 
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 300%;
-  height: 100vh;
-}
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+    height: 100vh;
+  }
 
-.slider-container {
-  width: 100%;
-  height: 100vh; /* Allow slider to take up 60% of the viewport */
-  overflow: hidden;
-  position: relative;
-  margin-top: 80px; /* Adjust this value based on your navbar height */
+  .slider-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin-top: 80px;
 
-}
+  }
 
-.slider {
-  display: flex;
-  height: 120%;
-  width: 300%; /* Since we have 3 slides */
-  transition: transform 0.3s ease;
-}
+  .slider {
+    display: flex;
+    height: 120%;
+    width: 300%; 
+    transition: transform 0.3s ease;
+  }
 
-.slide {
-  width: 100%;
-  height: 120%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  color: white;
-  position: relative;
-}
+  .slide {
+    width: 100%;
+    height: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    position: relative;
+  }
 
-#slide-1 {
-  background-image: url('/assets/background2.jpeg');
-}
+  #slide-1 {
+    background-image: url('/assets/background2.jpeg');
+  }
 
-#slide-2 {
-  background-image: url('/assets/background2.jpeg');
-}
+  #slide-2 {
+    background-image: url('/assets/background2.jpeg');
+  }
 
-#slide-3 {
-  background-image: url('/assets/background2.jpeg');
-}
+  #slide-3 {
+    background-image: url('/assets/background2.jpeg');
+  }
 
-/* Scrollable content below the slider */
-.content {
-  padding: 20px;
-}
+  .content {
+    padding: 20px;
+  }
 
-/* Add a peek effect for slides */
-.slider-container .slide {
-  width: 90vw;
-  margin-right: 5vw; 
-}
+  .slider-container .slide {
+    width: 90vw;
+    margin-right: 5vw; 
+  }
 
-/*Portfolio Page*/
-body.portfolio {
-  background-image: url('/assets/toki.jpg');
-}
+  body.portfolio {
+    background-image: url('/assets/toki.jpg');
+  }
 
-h1.portfolio{
-  color: whitesmoke;
-  text-align: left;
-}
+  h1.portfolio{
+    color: whitesmoke;
+    text-align: left;
+  }
+
+  body.portfolio header {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    font-size: 28px;
+    color: #10002b;
+    font-family: "Gaegu", static;
+    height: 120px;
+    line-height: 120px;
+    text-align: left;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
