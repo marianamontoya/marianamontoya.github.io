@@ -70,6 +70,10 @@
   a {
     color:#edf2fb;
   }
+
+  .link_a{
+    color:#000;
+  }
   
   .links {
     color:#0077b6;
@@ -347,7 +351,7 @@
     height: 120%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     font-size: 3rem;
     color: white;
     position: relative;
@@ -379,6 +383,11 @@
   }
 
   h1.portfolio{
+    color: whitesmoke;
+    text-align: left;
+  }
+
+  p.portfolio{
     color: whitesmoke;
     text-align: left;
   }

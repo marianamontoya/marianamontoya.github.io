@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
   slider.addEventListener('mousedown', startDragging);
   slider.addEventListener('mouseup', stopDragging);
   slider.addEventListener('mousemove', drag);
-  
   slider.addEventListener('mouseleave', stopDragging); // Ensure stop when cursor leaves slider
   
   // Add touch events for mobile compatibility
