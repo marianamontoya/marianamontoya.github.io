@@ -84,65 +84,88 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // SLIDER
-  let slider = document.querySelector('.slider');
-  let isDragging = false;
-  let startPos = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let animationID;
-  let currentIndex = 0;
+  // let slider = document.querySelector('.slider');
+  // let isDragging = false;
+  // let startPos = 0;
+  // let currentTranslate = 0;
+  // let prevTranslate = 0;
+  // let animationID;
+  // let currentIndex = 0;
   
-  slider.addEventListener('mousedown', startDragging);
-  slider.addEventListener('mouseup', stopDragging);
-  slider.addEventListener('mousemove', drag);
-  slider.addEventListener('mouseleave', stopDragging); // Ensure stop when cursor leaves slider
+  // slider.addEventListener('mousedown', startDragging);
+  // slider.addEventListener('mouseup', stopDragging);
+  // slider.addEventListener('mousemove', drag);
+  // slider.addEventListener('mouseleave', stopDragging); // Ensure stop when cursor leaves slider
   
-  // Add touch events for mobile compatibility
-  slider.addEventListener('touchstart', startDragging);
-  slider.addEventListener('touchend', stopDragging);
-  slider.addEventListener('touchmove', drag);
+  // // Add touch events for mobile compatibility
+  // slider.addEventListener('touchstart', startDragging);
+  // slider.addEventListener('touchend', stopDragging);
+  // slider.addEventListener('touchmove', drag);
   
-  function startDragging(event) {
-      isDragging = true;
-      startPos = getPositionX(event);
-      animationID = requestAnimationFrame(animation);
+  // function startDragging(event) {
+  //     isDragging = true;
+  //     startPos = getPositionX(event);
+  //     animationID = requestAnimationFrame(animation);
+  // }
+  
+  // function stopDragging() {
+  //     isDragging = false;
+  //     cancelAnimationFrame(animationID);
+  
+  //     // Snap to the nearest slide
+  //     const movedBy = currentTranslate - prevTranslate;
+  
+  //     if (movedBy < -100 && currentIndex < 2) currentIndex += 1;
+  //     if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
+  
+  //     setSliderPositionByIndex();
+  // }
+  
+  // function drag(event) {
+  //     if (isDragging) {
+  //         const currentPosition = getPositionX(event);
+  //         currentTranslate = prevTranslate + currentPosition - startPos;
+  //     }
+  // }
+  
+  // function getPositionX(event) {
+  //     return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+  // }
+  
+  // function animation() {
+  //     setSliderPosition(currentTranslate);
+  //     if (isDragging) requestAnimationFrame(animation);
+  // }
+  
+  // function setSliderPosition(translate) {
+  //     slider.style.transform = `translateX(${translate}px)`;
+  // }
+  
+  // function setSliderPositionByIndex() {
+  //     currentTranslate = currentIndex * -window.innerWidth;
+  //     prevTranslate = currentTranslate;
+  //     setSliderPosition(currentTranslate);
+  // }
+
+  let currentSlide = 1;
+  showSlide(currentSlide);
+
+  // Function to move to the next or previous slide
+  function plusSlides(n) {
+    showSlide(currentSlide += n);
   }
-  
-  function stopDragging() {
-      isDragging = false;
-      cancelAnimationFrame(animationID);
-  
-      // Snap to the nearest slide
-      const movedBy = currentTranslate - prevTranslate;
-  
-      if (movedBy < -100 && currentIndex < 2) currentIndex += 1;
-      if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
-  
-      setSliderPositionByIndex();
-  }
-  
-  function drag(event) {
-      if (isDragging) {
-          const currentPosition = getPositionX(event);
-          currentTranslate = prevTranslate + currentPosition - startPos;
-      }
-  }
-  
-  function getPositionX(event) {
-      return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-  }
-  
-  function animation() {
-      setSliderPosition(currentTranslate);
-      if (isDragging) requestAnimationFrame(animation);
-  }
-  
-  function setSliderPosition(translate) {
-      slider.style.transform = `translateX(${translate}px)`;
-  }
-  
-  function setSliderPositionByIndex() {
-      currentTranslate = currentIndex * -window.innerWidth;
-      prevTranslate = currentTranslate;
-      setSliderPosition(currentTranslate);
+
+  // Function to display the correct slide
+  function showSlide(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) { currentSlide = 1; } // Go back to first slide if beyond last
+    if (n < 1) { currentSlide = slides.length; } // Go to last slide if below first
+    
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    // Show the current slide
+    slides[currentSlide - 1].style.display = "block";
   }
