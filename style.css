@@ -204,22 +204,9 @@
     color: black;
   }
 
-  ul,ol{
-    list-style:none;
-    background-color:#014f86;
-    overflow: hidden;
-    padding:1em;
-  }
-
-  li {
-    display: inline;
-  }
-
   li a {
     text-decoration: none;
     color: white;
-    font-size: 1.3em;
-    padding:1em;
   }
 
   li a:hover {
@@ -264,8 +251,12 @@
 
   .faq-answer {
     display: none;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     color: #555;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
   }
 
   .faq-item.active .faq-answer {
@@ -427,4 +418,9 @@
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+
+.colored-bold {
+  font-weight: bold;
+  color: black; /* Change this to any color you like */
 }
